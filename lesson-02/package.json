@@ -6,5 +6,12 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.23",
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^10.12.0"
   }
 }
