@@ -1,5 +1,5 @@
 // A fake tablet that plays the role of the Android app.
-// Start the server first (npm run server), then run: npm run tablet
+// Start the server first (npm run dev), then run: npm run tablet
 const BASE_URL = process.env.BASE_URL ?? "http://localhost:3000";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -20,18 +20,11 @@ async function api(path, { method = "GET", body, token } = {}) {
   return data;
 }
 
-// 1. Register (also checks the server is up)
-let id, token;
-try {
-  ({ id, token } = await api("/devices/register", {
-    method: "POST",
-    body: { model: "Lenovo M10", siteId: 14 },
-  }));
-} catch (err) {
-  if (err.cause?.code !== "ECONNREFUSED") throw err;
-  console.error(`Server not reachable at ${BASE_URL}. Run \`npm run server\` first.`);
-  process.exit(1);
-}
+// 1. Register
+const { id, token } = await api("/devices/register", {
+  method: "POST",
+  body: { model: "Lenovo M10", siteId: 14 },
+});
 console.log("Registered as", id);
 console.log(`Send it a command while it runs:
   curl -X POST ${BASE_URL}/devices/${id}/commands -H "Content-Type: application/json" -d '{"type":"LOCK"}'\n`);

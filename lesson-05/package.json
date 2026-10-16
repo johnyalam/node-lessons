@@ -1,0 +1,16 @@
+{
+  "name": "lesson-05",
+  "version": "1.0.0",
+  "description": "Lesson 5: the EMM API rebuilt with Express",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "tablet": "node src/tablet.js",
+    "hello": "node src/01-hello-express.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
