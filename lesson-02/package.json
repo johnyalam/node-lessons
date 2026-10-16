@@ -5,7 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "node --watch src/index.js"
+    "dev": "node --watch src/index.js",
+    "server": "node --watch src/server.js",
+    "tablet": "node src/tablet.js"
   },
   "dependencies": {
     "dayjs": "^1.11.23",
