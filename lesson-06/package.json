@@ -1,0 +1,24 @@
+{
+  "name": "lesson-06",
+  "version": "1.0.0",
+  "description": "Lesson 6: the EMM API in TypeScript",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "basics": "tsx src/01-basics.ts",
+    "demo": "tsx src/demo.ts",
+    "tablet": "tsx src/tablet.ts"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^6.0.3"
+  }
+}

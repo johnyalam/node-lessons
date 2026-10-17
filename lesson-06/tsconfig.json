@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    // Output: modern JavaScript for Node 22
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "dist",
+    "rootDir": "src",
+    "sourceMap": true,
+
+    // Safety: the strict settings make TypeScript feel like Kotlin
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+
+    // Imports
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
+    "types": ["node"],
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}
