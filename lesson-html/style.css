@@ -1,0 +1,212 @@
+/* Shared by all three steps: HTML, React and React + TypeScript */
+
+:root {
+  --bg: #f3f4f6;
+  --card: #ffffff;
+  --text: #1b1f24;
+  --muted: #5d6470;
+  --border: #d5d9df;
+  --primary: #2350d0;
+  --primary-hover: #1b40a8;
+  --error: #c42b2b;
+  --error-bg: #fdecec;
+  --success: #1d6b3a;
+  --success-bg: #e6f4eb;
+  --radius: 8px;
+
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171c;
+    --card: #1d2128;
+    --text: #e8eaed;
+    --muted: #9aa1ac;
+    --border: #353b45;
+    --primary: #5b84f0;
+    --primary-hover: #7496f3;
+    --error: #f07b7b;
+    --error-bg: #3a2023;
+    --success: #7fd29c;
+    --success-bg: #1d3326;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Make the HTML `hidden` attribute win over display: flex etc. */
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 32px 28px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.06);
+}
+
+.brand {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.subtitle {
+  margin: 4px 0 24px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Tabs: Sign in | Create account */
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 20px;
+  background: var(--bg);
+  border-radius: 10px;
+}
+
+.tab {
+  padding: 9px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: var(--card);
+  color: var(--text);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.12);
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+input {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+}
+
+input:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+
+input[aria-invalid="true"] {
+  border-color: var(--error);
+}
+
+.error {
+  color: var(--error);
+  font-size: 0.82rem;
+}
+
+.error:empty {
+  display: none;
+}
+
+/* Buttons */
+.primary,
+.secondary {
+  padding: 11px;
+  border-radius: var(--radius);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary {
+  margin-top: 6px;
+  border: 0;
+  background: var(--primary);
+  color: #fff;
+}
+
+.primary:hover {
+  background: var(--primary-hover);
+}
+
+.secondary {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+}
+
+/* Messages */
+.message {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+}
+
+.message.success {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.message.error {
+  background: var(--error-bg);
+  color: var(--error);
+}
+
+/* Signed-in view */
+.welcome h2 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.welcome p {
+  margin: 0 0 20px;
+  color: var(--muted);
+}
+
+.note {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-align: center;
+}

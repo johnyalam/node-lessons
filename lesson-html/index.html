@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EMM Console – Sign in</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1 class="brand">EMM Console</h1>
+      <p class="subtitle">Manage your organization's tablets</p>
+
+      <!-- Shown when signed out -->
+      <section id="auth-view">
+        <div class="tabs">
+          <button type="button" class="tab active" data-tab="login">Sign in</button>
+          <button type="button" class="tab" data-tab="register">Create account</button>
+        </div>
+
+        <p id="message" class="message" hidden></p>
+
+        <!-- novalidate: we show our own error messages instead of the browser's -->
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="login-email">Email</label>
+            <input id="login-email" name="email" type="email" autocomplete="email" />
+            <small class="error"></small>
+          </div>
+
+          <div class="field">
+            <label for="login-password">Password</label>
+            <input id="login-password" name="password" type="password" autocomplete="current-password" />
+            <small class="error"></small>
+          </div>
+
+          <button type="submit" class="primary">Sign in</button>
+        </form>
+
+        <form id="register-form" novalidate hidden>
+          <div class="field">
+            <label for="register-name">Full name</label>
+            <input id="register-name" name="name" type="text" autocomplete="name" />
+            <small class="error"></small>
+          </div>
+
+          <div class="field">
+            <label for="register-email">Email</label>
+            <input id="register-email" name="email" type="email" autocomplete="email" />
+            <small class="error"></small>
+          </div>
+
+          <div class="field">
+            <label for="register-password">Password</label>
+            <input id="register-password" name="password" type="password" autocomplete="new-password" />
+            <small class="error"></small>
+          </div>
+
+          <div class="field">
+            <label for="register-confirm">Confirm password</label>
+            <input id="register-confirm" name="confirm" type="password" autocomplete="new-password" />
+            <small class="error"></small>
+          </div>
+
+          <button type="submit" class="primary">Create account</button>
+        </form>
+      </section>
+
+      <!-- Shown when signed in -->
+      <section id="welcome-view" class="welcome" hidden>
+        <h2>Welcome, <span id="welcome-name"></span>!</h2>
+        <p>You are signed in as <strong id="welcome-email"></strong>.</p>
+        <button type="button" id="logout" class="secondary">Sign out</button>
+      </section>
+
+      <p class="note">Demo only: accounts are saved in this browser.</p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
